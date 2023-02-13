@@ -5,16 +5,16 @@
 //!
 //! [`svd2rust`]: https://crates.io/crates/svd2rust
 //!
-//! This example depends on the [`stm32f3`] crate so you'll have to
+//! This example depends on the [`stm32l4`] crate so you'll have to
 //! uncomment it in your Cargo.toml.
 //!
-//! [`stm32f3`]: https://crates.io/crates/stm32f3
+//! [`stm32l4`]: https://crates.io/crates/stm32l4
 //!
 //! ```
 //! $ edit Cargo.toml && tail $_
-//! [dependencies.stm32f3]
-//! features = ["stm32f303", "rt"]
-//! version = "0.7.1"
+//! [dependencies.stm32l4]
+//! features = ["stm32l4x5", "rt"]
+//! version = "0.15"
 //! ```
 //!
 //! You also need to set the build target to thumbv7em-none-eabihf,
@@ -31,7 +31,7 @@ use panic_halt as _;
 use cortex_m::peripheral::syst::SystClkSource;
 use cortex_m_rt::entry;
 use cortex_m_semihosting::hprint;
-use stm32f3::stm32f303::{interrupt, Interrupt, NVIC};
+use stm32l4::stm32l4x5::{interrupt, Interrupt, NVIC};
 
 #[entry]
 fn main() -> ! {
